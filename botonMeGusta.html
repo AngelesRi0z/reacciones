@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+<body>   
+    <div class="d-grid gap-2 d-md-block" style="padding: 10%;">
+          
+<input type="button" onclick="meGusta()" value="Likes" style="border-radius: 20px ; color:black; background-color:aquamarine;border-color: aquamarine;"/>
+
+<input type="button" onclick="resetearClicks()" value="Dislikes" style="border-radius: 20px; color:black; background-color:aquamarine;border-color: aquamarine;" /> 
+
+
+</div>
+<script>
+function meGusta() {
+  
+    if (sessionStorage.contador) {
+     
+        sessionStorage.contador = parseInt(sessionStorage.contador) + 1;
+    } else {
+        sessionStorage.contador = 1;
+    }
+    document.getElementById("Likes").value = sessionStorage.contador + " Clicks";
+}
+
+function resetearClicks() {
+    if (sessionStorage.contador) {
+  
+        sessionStorage.contador = parseInt(sessionStorage.contador) -1 ;
+    } else {
+        sessionStorage.contador = 1;
+    }
+    document.getElementById("Dislikes").value = sessionStorage.contador - " Clicks";
+
+    
+}
+
+</script>
+  
+
+</body>
+</html>
